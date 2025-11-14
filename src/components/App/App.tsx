@@ -5,6 +5,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
+import MovieGrid from "../MovieGrid/MovieGrid";
 
 export default function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -33,6 +34,9 @@ export default function App() {
       <SearchBar onSubmit={handleSearch} />
       {isError && <ErrorMessage />}
       {isLoading && <Loader />}
+      {!isLoading && !isError && (
+        <MovieGrid movies={movies} onSelect={() => {}} />
+      )}
 
       <Toaster position="top-center" />
     </>
