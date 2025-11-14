@@ -13,7 +13,7 @@ export default async function fetchMovies(query: string): Promise<Movie[]> {
       query: query,
     },
     headers: {
-      Authorization: `Bearer ${import.meta.env.VITE_TMDB_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
       Accept: "application/json",
     },
   });
